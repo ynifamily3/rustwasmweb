@@ -3,7 +3,8 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "dev": "yarn build:rust && vite",
+    "dev": "yarn dev:build:rust && vite",
+    "dev:build:rust": "yarn build:rust --dev",
     "build:rust": "wasm-pack build ./src/rust-wasm --target web",
     "build": "yarn build:rust && tsc && vite build",
     "preview": "vite preview"
@@ -13,6 +14,7 @@
     "react-dom": "^18.0.0"
   },
   "devDependencies": {
+    "@types/node": "^17.0.35",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "@vitejs/plugin-react": "^1.3.0",
